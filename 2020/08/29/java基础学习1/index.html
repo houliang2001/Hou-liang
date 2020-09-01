@@ -190,7 +190,443 @@
 <p>小于等于&lt;=</p>
 <p>等于 ==</p>
 <p>不等 ！=<br>++i在前 先运算后赋值<br>i++在后 先赋值后运算<br>关系运算符是用来做比较运算的，比较的结果只有两个，一个是ture一个是false<br>常用逻辑运算符：</p>
-<p>运算符    汉语名称    表达式    说明<br>&amp;&amp;    与、并且    条件一&amp;&amp;条件二    两个条件同时为真，则结果为真。两个条件有一个为假时，结果为假<br>||    或、或者    条件一||条件二    两个条件有一个为真，则结果为真。两个条件同时为假，则结果为假<br>并不！    非    ！条件    条件为真时，结果为假。条件为假时，结果为真</p>
+<p>运算符    汉语名称    表达式    说明<br>&amp;&amp;    与、并且    条件一&amp;&amp;条件二    两个条件同时为真，则结果为真。两个条件有一个为假时，结果为假<br>||    或、或者    条件一||条件二    两个条件有一个为真，则结果为真。两个条件同时为假，则结果为假<br>并不！    非    ！条件    条件为真时，结果为假。条件为假时，结果为真<br>3 第三章</p>
+<p>3.1 If选择结构<br>3.1.1 为什么需要if选择结构<br>“需要先判断条件，满足条件后执行”的程序，需要if选择结构来实现</p>
+<p>3.1.2 什么是if选择结构<br>If选择结构的语法：if（条件）{</p>
+<p>代码块//条件成立后要执行的代码</p>
+<p>}</p>
+<p>首先，对条件进行判断。如果条件为真，则执行代码块；否则，执行代码块后面的部分。</p>
+<p>3.1.3 如何使用if选择结构<br>If选择结构先判断后执行</p>
+<p>If选择结构</p>
+<p>除了要实现条件成立执行的操作外，还要实现条件不成立时执行的操作，</p>
+<p>If_else选择结构的语法如下：</p>
+<p>If（条件）{</p>
+<p>代码块1</p>
+<p>}else{</p>
+<p>代码块2</p>
+<p>}</p>
+<p>表示如果 x x 就 x x；否则，就x x </p>
+<p>3.1.4 多重if选择结构<br>多重if选择结构在解决需要判断的条件是连续的区间时有很大的优势。<br>多重if选择结构不是多个基本if结构简单地排列在一起，它的语法如下：</p>
+<p>If（条件1）{</p>
+<p>代码块1</p>
+<p>}else if（条件2）{</p>
+<p>代码块2</p>
+<p>}else if（条件3）{<br>代码块3<br>}else if（条件4）{<br>代码块4<br>}else{</p>
+<p>代码块5</p>
+<p>}<br>首先判断条件1，如果成立，则执行代码块1，然后直接跳出这个多重if选择结构，执行它后面的代码。</p>
+<p>如果条件1不成立，则判断条件2，如果条件2成立，则执行代码块2，然后跳出这个if多重结构，执行它后面的代码</p>
+<p>如果条件2也不成立，则代码块1和代码块2都不执行，直接执行代码块3</p>
+<pre><code>     多重if举例</code></pre>
+<p>import java.util.Scanner;</p>
+<p>public class RFV {<br>    public static void main(String[] args){<br>        System.out.println(“请输入刘珊珊的成绩”);<br>        Scanner input=new Scanner(System.in);<br>        int fenshu =input.nextInt();<br>        fenshu =fenshu/10;<br>    if(fenshu==100){<br>        System.out.println(“买辆车”);</p>
+<pre><code>&#125;else if(fenshu&gt;=60)&#123;
+    System.out.println(&quot;买手机&quot;);
+&#125;else&#123;
+    System.out.println(&quot;没哟偶礼物&quot;);
+&#125;
+
+
+
+
+
+
+  随机数     </code></pre>
+<p>import java.util.Scanner;<br>public class ZXCS {<br>public static void main(String[] args){<br>    Scanner input=new Scanner(System.in);<br>    System.out.println(“请输入起是数字”);<br>    int c =input.nextInt();<br>    System.out.println(“请输入终止数字”);<br>    int b= input.nextInt();<br>    int random =(int) (Math.random()*(b-c)+c);<br>    System.out.println(“系统计算的”+c+”到”+b+”其他随机数”+random);<br>}<br>}</p>
+<pre><code>    &#125;
+&#125;</code></pre>
+<p>3.1.5 嵌套if选择结构嵌套if选择结构就是在if选择结构里面再嵌入if选择结构<br>流程图如下：</p>
+<p>If（条件1）{</p>
+<p>If（条件2）{</p>
+<p>代码块1</p>
+<p>}else{</p>
+<p>代码块2</p>
+<p>}</p>
+<p>}else{</p>
+<p>代码块3</p>
+<p>}</p>
+<p>当条件1为真条件2为真时执行代码块1</p>
+<p>当条件1为假时，执行代码块3</p>
+<p>当条件1为真，条件2为假时，执行代码块2</p>
+<p>4 第四章</p>
+<p>4.1 switch选择结构<br>4.1.1 为什么使用switch选择结构<br>Switch选择结构可以方便地解决等值判断问题</p>
+<p>4.1.2 什么是switch选择结构<br>语法</p>
+<p>Switch(表达式){</p>
+<p>Case常量1：</p>
+<p>//代码块1；</p>
+<p>break;</p>
+<p>case常量2：</p>
+<p>//代码块2;</p>
+<p>break</p>
+<p>………..</p>
+<p>Default:</p>
+<p>//代码块n;</p>
+<p>break</p>
+<p>}<br>            举例<br>import java.util.Scanner;</p>
+<p>public class EDC {<br>     public static void main(String [] args){<br>         Scanner sc=new Scanner(System.in);<br>         System.out.println(“请输入星期几：(1-7)”);<br>         int week =sc.nextInt();<br>         switch (week){<br>     case 1:<br>         System.out.println(“学习编程”);<br>         break;<br>     case 2:<br>         System.out.println(“学习英语”);<br>         break;</p>
+<pre><code> case 3:
+     System.out.println(&quot;学习编程&quot;);
+     break;
+ case 4:
+     System.out.println(&quot;学习英语&quot;);
+     break;
+ case 5:
+     System.out.println(&quot;学习编程&quot;);
+     break;
+ case 6:
+     System.out.println(&quot;学习英语&quot;);
+     break;
+ case 7:
+     System.out.println(&quot;休息&quot;);
+     break;
+     &#125;
+ &#125;</code></pre>
+<p>}</p>
+<p>先计算并获得switch后面小括号里的表达式或变量值，如何计算结果顺序与每个case后的常量比较，当二者相等时，执行这个case块中的代码；当遇到break时就跳出switch选择结构，执行switch后面的代码。如果没有任何一个case后的常量与switch后的小括号中的值相等，则执行switch末尾部分的default块中的代码</p>
+<p>4.1.3 如何使用switch选择结构<br>Switch选择结构的条件只能是等值的判断，而且只能是整型或字符型的等值判断。switch选择结构只能用于判断一个整型变量或表达式是否等于某个整数值的情况或者一个字符型变量或表达式是否等于某个字符的情况，并且每一个case后面的常量值都不一样。</p>
+<p>case后面可以有多个语句，而且不需要使用“{}”括起来</p>
+<p>switch选择结构只能用于等值条件判断的情况</p>
+<p>5 第五章</p>
+<p>5.1 循环结构<br>5.1.1 为什么需要循环结构<br>有时候一段语句需要重复输入，太麻烦，使用循环结构可以简答快速输出语句</p>
+<p>5.1.2 什么是循环结构<br>循环就是重复地做，所有循环都有一个特点：首先，循环不是无休止的，满足一定条件循环才会继续，称为“循环条件”，循环条件不满足的时候，循环退出；其次，循环结构是反复进行相同的或类似的一系列操作，称为“循环操作”。</p>
+<p>5.2 while循环结构<br>5.2.1 什么是while循环结构<br>语法：</p>
+<p>while（循环条件）{</p>
+<p>循环操作} </p>
+<p>   代码显示：<br>public class OK {<br>public static void main(String[] args){<br>    int i =1;//循环变量，记录循环多少次<br>    while(i&lt;=100){//循环条件<br>    System.out.println(“第”+i+”编写好好学习，天天向上”);<br>i++;//迭代<br>    }<br>}<br>}<br>                  代码示例<br>import java.util.*;<br>public class OK3{<br>    public  static void main(String[] args){<br>        Scanner input=new Scanner(System.in);<br>        System.out.println(“请输入数字1-7：”);<br>        int a = input.nextInt();<br>        while (a!= 0) {<br>            switch (a) {<br>            case 0:<br>                System.out.println(“ 程序结束”);<br>            case 1:<br>                System.out.println(“今天是MON”);<br>                break;<br>            case 2:<br>                System.out.println(“今天是TUE”);<br>                break;<br>            case 3:<br>                System.out.println(“今天是WED”);<br>                break;<br>            case 4:<br>                System.out.println(“今天是THD”);<br>                break;<br>            case 5:<br>                System.out.println(“今天是FRI”);<br>                break;<br>            case 6:<br>                System.out.println(“今天是SAT”);<br>                break;<br>            case 7:<br>                System.out.println(“今天是SUN”);<br>                break;</p>
+<pre><code>        default:
+            System.out.println(&quot;输入有误，请重新输入&quot;);
+            break;
+        &#125;
+        System.out.println(&quot;请输入数字1-7：&quot;);
+        a = input.nextInt();
+    &#125;
+    System.out.println(&quot;程序结束&quot;);
+&#125;</code></pre>
+<p>}</p>
+<p>1先声明并初始化循环变量</p>
+<p>2判断循环结构是否满足，如果满足则执行循环操作，否则退出。</p>
+<p>3执行完循环操作后，再次判断循环条件，决定执行循环或退出循环。</p>
+<p>5.3 程序调试<br>5.3.1 为什么需要程序调试<br>有时候代码错误了，不好找到错误的位置，使用程序调试可以帮你正确找到程序出错的位置</p>
+<p>5.3.2 什么是程序调试<br>为了找出程序中的问题所在，希望程序在希望的地方暂停，以便查看运行到这里时变量的值，</p>
+<p>还希望单步运行程序，跟踪程序的运行流程，观察哪条语句被执行了，哪条语句没有执行</p>
+<p>5.3.3 如何进行程序调试<br>1.分析错误，设置断点</p>
+<p>断点用来调试的时候确定程序停在某一行代码处，以便发现程序错误。</p>
+<p>在设置断点的代码行左侧边栏处双击，就出现一个圆形的断点标记，再次双击即可取消</p>
+<p>2.启动调试，单步执行</p>
+<p>设置好断点后，就可以单击“启动调试”按钮，即可开始调试</p>
+<p>5.4 do_while循环<br>5.4.1 为什么需要do_while循环<br>while循环结构不能将有些循环条件运行，这时就需要do_while循环结构来执行</p>
+<p>5.4.2 什么是do_while循环结构<br>语法：</p>
+<p>Do{</p>
+<p>循环操作</p>
+<p>}while（循环条件）;</p>
+<p>1先声明并初始化循环变量</p>
+<p>2.执行一遍循环操作<br>import java.util.*;<br>public class OK {<br>public static void main(String[] args){<br>Scanner input = new Scanner(System.in);<br>System.out.println(“张浩合格了吗：y/n”);<br>String over=over =input.next();<br>while(over.equals(“n”)){<br>    do{<br>    System.out.println(“上午理论”);<br>    System.out.println(“下午即使”);<br>    System.out.println(“张浩合格了吗？y/n”);<br>    over=input.next();<br>}while(over.equals(“n”));<br>    System.out.println(“合格了”);<br>}<br>}<br>}<br>32判断循环结构是否满足，如果满足则执行循环操作，否则退出。</p>
+<p>5.5 while结构与do_while结构的区别<br>while结构是先判断后执行</p>
+<p>do_while循环结构是先执行后判断</p>
+<p>import java.util.Scanner;</p>
+<p>public class OK {<br>public static void main(String[] args) {<br>    int sum = 0 ;<br>    int i = 1;<br>    do {<br>    if (i %7 == 0)<br>         sum += i;<br>    ++i;<br>    } while (i &lt;= 50);<br>    System.out.println(“sum = “ + sum);<br>}<br>}</p>
+<p>6 第六章</p>
+<p>6.1 for循环<br>6.1.1 为什么需要for循环<br>对于循环次数已经固定的循环结构，可以使用for循环结构来实现</p>
+<p>6.1.2 什么是for循环结构</p>
+<ol>
+<li><p>初始部分：设置循环的初始状态</p>
+</li>
+<li><p>循环体：重复执行的代码</p>
+</li>
+<li><p>迭代部分：下一次循环开始前要执行的部分</p>
+</li>
+<li><p>循环条件：判断是否进行循环的条件</p>
+</li>
+</ol>
+<p>语法：</p>
+<p>for(表达式1；表达式2；表达式3){</p>
+<p>//循环体</p>
+<p>}</p>
+<p>表达式1.赋值语句</p>
+<p>表达式2.条件语句</p>
+<p>表达式3.赋值语句</p>
+<p>执行顺序：</p>
+<p>（1） 执行初始部分</p>
+<p>（2） 进行循环判断</p>
+<p>（3） 根据循环条件判断结果</p>
+<p>如果为true,则执行循环体</p>
+<p>如果为false则退出循环</p>
+<p>（4） 执行迭代部分，改变循环变量值</p>
+<p>（5） 依次重复步骤（2）~（4），值到退出for循环</p>
+<p>6.1.3 如何使用for循环<br>（1） 要明确循环条件和循环操作</p>
+<p>（2） 套用for语法写出代码</p>
+<p>（3） 检查循环是否能够退出</p>
+<p>6.2 跳转语句<br>有时根据情况需要停止整个循环或者跳到下一次循环，有时需要从程序的一部分跳到程序的其他部分，这些都可以使用跳转语句实现</p>
+<p>6.3 break语句的使用<br>break用于跳出循环</p>
+<p>continue不执行完循环体中所有的语句</p>
+<p>简答题1说明在循环结构中break语句和continue语句的区别</p>
+<p>break是跳出循环结构，不再执行循环</p>
+<p>continue是跳出此次循环，开始下一次循环</p>
+<p>简答题6阅读下列程序段，写出程序结束后变量sum的值</p>
+<p>package jd;</p>
+<p>public class Jd_6 {</p>
+<p>public static void main(String[] args){</p>
+<p>int sum=0,</p>
+<p>for(int i=1;i&lt;=4;i++){</p>
+<p>switch(i){</p>
+<p>case 1:</p>
+<p>sum=sum+2;</p>
+<p>case 2:</p>
+<p>sum=sum+4;</p>
+<p>continue;</p>
+<p>case 3:</p>
+<p>sum=sum+16;</p>
+<p>break;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>Sum=27；</p>
+<p>7 第七章</p>
+<p>7.1 第一章<br>1、程序是为了让计算机执行某些操作或解决某个问题而编写的一系列有序指令的集合</p>
+<p>2、Java包括编程语言和相关的大量技术</p>
+<p>3、Java主要用于开发两类程序，桌面应用程序和internet应用程序，</p>
+<p>4、开发一个Java应用程序的基本步骤是，编写源代码，编译程序和运行程序，源程序以.java为后缀名，编译后生成的文件以.class为后缀名，使用javac命令可以编译.java文件，使用java命令可以运行编译后 生成的.class文件。</p>
+<p>5、编写Java程序要符合Java程序规范，为程序编写注释大大增加了程序的可读性，</p>
+<p>6、Eclipse是一个功能强大的集成开发环境，他的各种窗口便于Java程序的开发，调试和管理。</p>
+<p>7.2 第二章<br>1、变量是一个数据存储空间的表示，他是存储数据的基本单元</p>
+<p>2、Java中常用的数据类型有整形（int），双精度浮点型(double)，字符型（char）和字符串型（String）</p>
+<p>3、变量要先声明并赋值，然后才能使用</p>
+<p>4、Java提供各种类型的运算符，</p>
+<p>赋值运算符（=）</p>
+<p>算术运算符（+，-，*，/，%）</p>
+<p>5.数据类型转换是为了方便不同类型的数据之间进行运算</p>
+<p>6、数据类型转换包括自动类型转换盒强制类型转换，发生自动类型转换必须符合一定的条件。</p>
+<p>7、Java提供Scanner类可以实现从控制台获取键盘输入的信息。</p>
+<p>单词</p>
+<p>7.3 第三章<br>1、java中使用boolean类型表示真假，boolean类型的两个值为ture和false;</p>
+<p>2、Java中使用关系运算符可以用来比较大小，高低，多少等，比较的结果是boolean类型</p>
+<p>3、Java中的if选择结构，包括以下形式</p>
+<p>if选择结构：可以处理单一或组合条件的情况</p>
+<p>If-else选择结构，可以处理简单的条件分支情况。</p>
+<p>7.4 ?第四章<br>1.基本if选择结构，可以处理单一或组合条件的情况。</p>
+<p>2.if-else选择结构，可以处理简单的条件分支情况；</p>
+<p>3.多重if选择结构，可以处理复杂的条件分支情况。</p>
+<p>在条件判断是等值判断的情况下，可以使用switch选择结构代替多重if选择结构。在使用switch选择结构时不要忘记每个case的最后写上break语句；</p>
+<p>为了增加程序的健壮性，可以再程序中主动判断，并给出用户友好的提示；</p>
+<p>产生随机数的方法</p>
+<p>Math.random() * 10</p>
+<p>这是0-10之间的随机数</p>
+<p>7.5 ?第五章<br>循环结构由循环条件和循环操作组成，只要满足循环条件，循环操作就会反复执行。</p>
+<p>使用循环解决问题的步骤，分析循环条件和循环操作，套用循环的语法写出代码，检查循环能否退出。</p>
+<p>编写循环结构代码时需要注意，循环变量的初值，循环操作中对循环变量值的改变和循环条件三者间的关系，确保循环次数正确，不要出现“死循环”；</p>
+<p>while循环的贴点是先判断，后执行，do-while循环的特点是先执行，在判断。</p>
+<p>程序调试时满足我们暂停程序，观察变量和逐条执行语句等功能的工具和方法的总称。主要方法包括设置断点，单步运行和观察变量。</p>
+<p>7.6 第六章<br>java当中主要的三种循环，while，do-while， for循环结构，无论哪一种循环结构，都有四个必不可少的部分，初始部分，循环条件，循环体，迭代部分，缺少了任何一二都可能造成严重的错误；</p>
+<p>三种循环结构的语法</p>
+<p>while</p>
+<p>while(条件){</p>
+<p>//循环体</p>
+<p>}</p>
+<p>do-while</p>
+<p>do{</p>
+<p>//循环体</p>
+<p>}while(条件);</p>
+<p>for</p>
+<p>for(int i = 0; i &lt; 100; i++){</p>
+<p>//循环体</p>
+<p>}</p>
+<p>执行顺序的不同</p>
+<p>while循环：先执行条件判断，在执行循环体，如果条件不成立，退出循环</p>
+<p>do-while循环：先执行循环体，在进行条件判断，循环体至少执行一次。</p>
+<p>for循环：先执行初始化步分，在进行条件判断，然后执行循环体，最后进行迭代部分的计算，如果条件不成立，跳出循环。</p>
+<p>8 第八章 </p>
+<p>8.1 数组概述<br>8.2 为什么需要数组<br>数组就是一个变量，用于将相同数据类型的数据存储在内存中，数组中的每一个数据元素都属于同一数据类型。</p>
+<p>8.2.1 Java中的数组<br>标识符：数组的名称</p>
+<p>数组元素：存放到数组中的数据</p>
+<p>数组下标：对数组元素的编号</p>
+<p>元素类型：存储在数组中数据的类型</p>
+<p>8.3 如何使用数组<br>8.3.1 使用数组的步骤</p>
+<ol>
+<li><p>声明数组：数组的语法：数据类型【】? 数组名<br>如Int[] a=new int[3];<br>数据类型? 数组名【】</p>
+</li>
+<li><p>分配空间：分配空间就是要告诉计算机在内存中分配一些连续的空间来存储数据</p>
+</li>
+</ol>
+<p>语法：数组名=new 数据类型【数组长度】</p>
+<p>数据类型【】 数组名=new 数据类型【数组长度】</p>
+<ol start="3">
+<li>赋值：语法：数组名【下标值】</li>
+</ol>
+<p>数据类型【】 数组名={值1，值2，值3…….，值n}</p>
+<p>8.4 数组应用<br>8.4.1 数组排序：语法：Arrays.sort（数组名）<br>只需要把数组名放在sort（）方法的括号中</p>
+<p>8.4.2 求数组的最大值：利用循环，用max变量依次与数组中的元素进行比较，要是数组中的元素比max大，就把数组中的元素赋给max，继续循环，求最小值就是把&gt;改成&lt;。<br>8.4.3 向数组中插入元素：<br>先把元素按顺序排列，用int? index=数组名.length保存新增成绩插入位置，输入你要插入的元素，把你要输入的元素和原元素比大小，得出元素的下标，把元素的下标赋给index</p>
+<p>数组名【index】=插入的元素</p>
+<p>循环输出新数组中的元素</p>
+<pre><code>   举例1</code></pre>
+<p>import java.util.Scanner;</p>
+<p>public class s1 {<br>public static void main(String[] args) {<br>    String[]goods= new String []{“nike背包”,”adidas 运动衫”,”李宁运动鞋”,”kappa外套”,”351腰包”};<br>System.out.println(“本次特价商品有:”);<br>for(int i=0;i&lt;goods.length;i++){<br>    System.out.println(goods[i]);<br>}<br>}<br>}<br>           举例2.<br>import java.util.Scanner;</p>
+<p>public class s2 {<br>public static void main(String[] args) {<br>Scanner input=new Scanner(System.in);<br>double[] a = new double[5];<br>double sum = 0;<br>System.out.println(“请输入会员本月的消费记录”);<br>for (int i = 0; i &lt; a.length; i++) {<br>System.out.print(“请输入第” + (i + 1) + “笔购物金额：”);<br>a[i] = input.nextDouble();<br>}<br>System.out.println(“\n”+”序号” + “\t\t” + “金额（元）”);<br>for (int j= 0; j &lt; a.length; j++) {<br>sum+=a[j];<br>System.out.println((j + 1) + “\t\t” + a[j]);<br>}<br>System.out.println(“总金额” + “\t\t” + sum);<br>}<br>}<br>      数组升序.降序.逆序<br>package paixu;</p>
+<p>import java.util.Arrays;//引入命名空间<br>import java.util.Scanner;<br>public class cha {<br>    public static void main(String[] args) {<br>    int[] nums = {8,4,2,1,23,344,12};<br>    Arrays.sort(nums);//排序<br>    //插入前<br>    System.out.println(“插入前：”);<br>    for (int i = 0; i &lt; nums.length; i++) {<br>        System.out.print(nums[i]+”\t”);<br>    }<br>    //输入一个数字判断该数字在数组中的下标<br>    Scanner input = new Scanner(System.in);<br>    System.out.println(“\n请输入一个数字：”);<br>    int num = input.nextInt();<br>    //找位置<br>    int index=nums.length;<br>    for (int i = 0; i &lt; nums.length; i++) {<br>        if(num&lt;nums[i]){<br>            index=i;<br>            break;<br>        }<br>    }<br>    //扩大数组<br>    int[] newNums = new int[nums.length+1];<br>    //循环赋值<br>    for (int i = 0; i &lt; nums.length; i++) {<br>        newNums[i]=nums[i];<br>    }<br>    //从index开始移位（从后往前）<br>    for(int i=newNums.length-1;i&gt;index;i–){<br>        newNums[i]=newNums[i-1];<br>    //插入<br>    }<br>        newNums[index]=num;</p>
+<pre><code>for (int i = 0; i &lt; newNums.length; i++) &#123;
+    System.out.print(newNums[i]+&quot;\t&quot;);</code></pre>
+<p>}<br>}<br>}<br>9 第九章</p>
+<p>9.1 二重循环结构<br>9.1.1 为什么使用二重循环<br>循环结构能够解决计算机重复执行的动作，但如果要算两个值的输入，则用二重循环计算</p>
+<p>9.1.2 什么是二重循环<br>二重循环计算是一个循环体内包含另一个完整循环的结构</p>
+<p>9.1.3 如何使用二重循环<br>二重循环分为内层和外层循环，外层循环是指第一个循环结构，内层循环是指被第一个循环结构所包含的循环结构；外层循环用来控制循环次数，内层循环用来控制每一次的循环的次数</p>
+<p>9.2 跳转语句进阶<br>9.2.1 在二重循环结构中使用contiune语句<br>在内层循环中的continue语句，跳转时是跳过了内层循环中的剩余语句进入内层循环的下一次循环</p>
+<p>9.2.2 在二重循环中使用break语句<br>在内层循环中的break语句是跳出本层循环</p>
+<p>当break语句和continue语句在内层循环时，只会影响内层循环的执行，对外层循环没有影响</p>
+<p>10 ? ? 第十章复习之前的所学内容</p>
+<p>10.1 、开发Java程序的步骤<br>第一步、编写源代码</p>
+<p>第二步、编译</p>
+<p>第三版、运行</p>
+<p>java程序结构</p>
+<p>1、编写程序框架</p>
+<p>public class HelloWorld{}</p>
+<p>HelloWorld是类名必须和文件名称一样。属于这个类的代码都要放在大括号中间</p>
+<p>类必须用用class修饰</p>
+<p>2、编写main方法的框架</p>
+<p>public static void main(String[] args){}</p>
+<p>main()方法是java程序的入口，是所有java应用程序的起始点，没有main()方法，计算机就不知道该从哪里开始执行程序，注意，一个程序只能有一个main()方法</p>
+<p>10.2 变量和运算符<br>10.2.1 变量<br>我们根据内存地址可以找到内存空间的位置，也就找到存储的数据了。但是内存地址非常不好记，因此我们给这块内存空间起一个别名，通过使用别名找到对应的存储数据。变量是一个数据存空间的表示。</p>
+<p>通过变量名可以简单快速的找到它存储的数据，将数据指定给变量，就是将数据存储到别名为变量名的那个房间，调用变量，就是将那个房间中的数据取出来使用，可见，变量是存储数据的一个基本单元，不同的变量相互独立。</p>
+<p>10.2.2 运算符<br>“=”为赋值运算符。</p>
+<p>在java中提供运算功能的就是算术运算符，他使用数值操作数进行数学计算。</p>
+<p>常用算术运算符</p>
+<p>+<br>加    l -<br>l 减    *乘法    / 除法    %取余<br>?    ?    ?    ?    ?</p>
+<p>10.2.3 逻辑运算符<br>逻辑运算符</p>
+<p>&amp;&amp;    与，并且    条件1 &amp;&amp;条件2<br>||    或，或者    条件1||条件2<br>!    非    !条件<br>?    ?    ?</p>
+<p>10.2.4 关系运算符</p>
+<blockquote>
+<pre><code>大于</code></pre>
+<p>&lt;    小于<br>=    大于 等于<br>&lt;=    小于 等于<br>==    等于<br>!=    不等于<br>?    ?</p>
+</blockquote>
+<p>10.2.5 其他运算符<br>自增：i++</p>
+<p>自减：i–<br>补充：条件运算符（三元运算符）；<br>就是一个问号？<br>1，<br>10.3 数据类型与数组<br>10.3.1 八大基本类型<br>boolean 逻辑型 1 true/false </p>
+<p>char 文字型 16 </p>
+<p>byte 整数类型 8 -27 ~ 27-1 </p>
+<p>short 整数类型 16 -215 ~ 215-1 </p>
+<p>int 整数类型 32 -231 ~ 231-1 </p>
+<p>long 整数类型 64 -263 ~ 263-1 </p>
+<p>float 浮点型 32 </p>
+<p>double 浮点型 64</p>
+<p>10.3.2 引用数据类型：<br>数组，字符串类型（String）在java中属于引用数据类型。</p>
+<p>引用数组类型，赋值是把原对象的引用传递给另一个引用，对数组而言，当一个数组引用赋值给另一个数组引用后，这两个引用只想同一个数组，也就是指向同一块内存空间。</p>
+<p>在Java中数组是对象，数组标识符只是一个引用，他指向内存中创建的一个真实的数组对象。</p>
+<p>在java中定义数组之后，若没有指定初始值，则依数据类型的不同，会给数组元素 赋予一个默认值。</p>
+<p>int        10<br>double        12.5<br>char        ‘0’<br>boolean        false/ture<br>?    ?    ?</p>
+<p>10.3.3 ?数据类型转换<br>规则1：如果一个操作数为double型，则整个表达式可提升为double型</p>
+<p>规则2：满足自动类型转换的条件，</p>
+<p>两种类型要兼容：数值类型（整形和浮点型）互相兼容</p>
+<p>目标类型大于源类型：double型可以存放int型数据，因为double型变量分配的空间足够存储int型变量，因此，我们也把int变量转换成double型变量形象的称谓“放大转换”</p>
+<p>强制数据类型转换</p>
+<p>语法</p>
+<p>（数据类型）表达式</p>
+<p>在变量前加上括号，括号总得类型就是你要强制转换成的类型。</p>
+<p>double i=(int)input.next();</p>
+<p>10.3.4 数组<br>在java中，数组就是一个变量，用于将相同数据类型的数据存储在存储单元中，数组中的每一个元素都属于同一数据类型。</p>
+<p>数组只能有一个名称，即标识符</p>
+<p>数组元素在数组里顺序排列编号，该编号即为元素下标，它标明了元素在数组中的位置，首元素的编号规定为0，依次递增。</p>
+<p>数组中的每个元素都可以通过下标来访问。</p>
+<p>数组的大小（长度）是数组可容纳元素的最大数量，定义一个数组的同时也定义了他的大小，如果数组已满但是还继续向数组中存储数据的话，程序就会出错，着称为数组越界。</p>
+<p>使用数组的步骤</p>
+<p>1、声明数组，语法：</p>
+<p>数据类型[] 数组名；<br>例如Int[]haha</p>
+<p>或者</p>
+<p>数据类型? 数组名[];</p>
+<p>数组名可以使任意合法的变量名；</p>
+<p>2、分配空间</p>
+<p>在声明了数组之后，还要为数组分配内存空间，这样数组的每一个元素才有一个空间进行存储。在java中可以使用new关键字来给数组分配空间；</p>
+<p>语法：</p>
+<p>数组名 = new 数据类型[数组长度]；<br>Hahha=new int[5]{};<br>其中数组长度就是数组中能存放的元素个数；</p>
+<p>语法：</p>
+<p>数据类型? [] 数组名 = new 数组类型[数组长度];<br>Int[]haha=new int[5];<br>3、赋值</p>
+<p>数组中的每一个元素都是可以通过下标来访问，语法：</p>
+<p>数组名[下标值]；</p>
+<p>在编写程序时，数组和循环往往结合在一起使用，可以大大简化代码，提高程序效率。</p>
+<p>语法：</p>
+<p>数据类型 [] 数组名 = {值1，值2，…值n}；</p>
+<p>使用? ? 数组名.length? 获取数组的长度；</p>
+<p>10.4 结构选择<br>10.4.1.1 选择结构<br>if选择结构</p>
+<p>语法</p>
+<p>If(条件){</p>
+<p>代码块</p>
+<p>}</p>
+<p>if-else选择结构</p>
+<p>语法</p>
+<p>If(条件){</p>
+<p>代码块1</p>
+<p>}else{</p>
+<p>代码块2</p>
+<p>}</p>
+<p>多重if选择结构的语法</p>
+<p>If(boolean){</p>
+<p>代码块；</p>
+<p>}else if(boolean){</p>
+<p>代码块；</p>
+<p>}else{</p>
+<p>代码块；</p>
+<p>}</p>
+<p>switch选择结构</p>
+<p>语法</p>
+<p>switch(){</p>
+<p>case 常量1：</p>
+<p>代码块1；</p>
+<p>break;</p>
+<p>case 常量2:</p>
+<p>代码块2；</p>
+<p>break;</p>
+<p>default:</p>
+<p>}</p>
+<p>嵌套if选择结构</p>
+<p>语法</p>
+<p>If(条件){</p>
+<p>If(条件){</p>
+<p>代码块1</p>
+<p>}else{</p>
+<p>代码块2</p>
+<p>}</p>
+<p>}else{</p>
+<p>代码快3</p>
+<p>}</p>
+<p>10.4.1.2 循环结构<br>在java程序中的循环结构有三种实现方式：while循环，do-while循环和for循环，</p>
+<p>while循环语法//用于不确定多少次</p>
+<p>while(循环条件{</p>
+<p>循环操作</p>
+<p>}</p>
+<p>do-while循环//用于循环次数一定</p>
+<p>do{</p>
+<p>循环操作</p>
+<p>}while(循环条件);</p>
+<p>for循环的基本语法</p>
+<p>for(表达式1；表达式2；表达式3){</p>
+<p>//循环体</p>
+<p>}</p>
+<p>java当中主要的三种循环，while，do-while， for循环结构，无论哪一种循环结构，都有四个必不可少的部分，初始部分，循环条件，循环体，迭代部分，缺少了任何一二都可能造成严重的错误；</p>
+<p>三种循环结构的语法</p>
+<p>while</p>
+<p>while(条件){</p>
+<p>//循环体</p>
+<p>}</p>
+<p>do-while</p>
+<p>do{</p>
+<p>//循环体</p>
+<p>}while(条件);</p>
+<p>for</p>
+<p>for(int i = 0; i &lt; 100; i++){</p>
+<p>//循环体</p>
+<p>}</p>
+<p>执行顺序的不同</p>
+<p>while循环：先执行条件判断，在执行循环体，如果条件不成立，退出循环</p>
+<p>do-while循环：先执行循环体，在进行条件判断，循环体至少执行一次。</p>
+<p>for循环：先执行初始化步分，在进行条件判断，然后执行循环体，最后进行迭代部分的计算，如果条件不成立，跳出循环。</p>
+<p>使用情况不同。</p>
+<p>在解决问题时，对于循环次数确定的情况，通常选用for循环，对于循环次数不确定的情况，通常选用while和do-while循环；</p>
+<p>10.4.1.3 跳转结构<br>跳转语句</p>
+<p>java三种形式的跳转，break(停止)，continue(继续)和return(返回)。</p>
+<p>6.2.1、break语句的使用</p>
+<p>break语句用于终止某个循环，使程序跳到循环块的下一条语句，在循环中位于break后的语句将不再执行，循环也停止执行。</p>
+<p>break通常和if条件语句一起使用；</p>
+<p>break还可以使用在switch当中；</p>
+<p>6.2.2、continue语句的使用</p>
+<p>continue可以用于for循环，也可以用于do-while和while循环，在for循环中，continue使程序先跳转到迭代部分（i++）然后判断循环条件，如果为true,继续下一次循环，否则终止循环，在while循环中，continue执行完毕后，程序将直接判断循环条件，continue只能用在循环结构中</p>
+<p>break是终止某个循环，，程序跳转到循环块呃下一条语句</p>
+<p>continue语句是跳出本次循环，进入下一次循环。</p>
 
     </div>
 
@@ -200,12 +636,12 @@
     
 </div>
     <div class="footer" id="footer">
-    <p><h4>Copyright © 2020 | Author: 侯亮 | Theme By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    <p><h4>版权所有 © 2020 | 作者: 侯亮 | 主题 By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
     
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span id="busuanzi_container_site_pv">本站浏览总访问量: <span id="busuanzi_value_site_pv"></span></span>
         <span class="post-meta-divider">|</span>
-        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+        <span id="busuanzi_container_site_uv">本站访问人数: <span id="busuanzi_value_site_uv"></span></span>
     
     <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
         <input type="checkbox" name="switch" id="update_style">
